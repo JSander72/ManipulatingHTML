@@ -4,12 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </head>
 <body>
-  <input>
+  <script src="appJQ.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
+  <input type="text" id="messageInput" placeholder="Enter your message">
+  <button id="showAlertButton">Show Alert</button>
+
+  <div id="colorChangeDiv" style="width: 200px; height: 200px; background-color: lightblue;">
+    Hover over me
+  </div>
+
+  <p id="colorChangeParagraph">Click me to change color</p>
+
+  <button id="addNameButton">Add Name</button>
+  <div id="nameContainer"></div>
+
+  <button id="addFriendsButton">Add Friends</button>
+  <ul id="friendsList"></ul>
+
+
+
 </body>
 </html>
-
