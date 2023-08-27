@@ -3,40 +3,89 @@ document.addEventListener("DOMContentLoaded", function () {
   var button = document.createElement("button");
   button.textContent = "Click me!";
 
-  // Append the button to body
+
   document.body.appendChild(button);
 
-  // Add an event listener
+
   button.addEventListener("click", function () {
-      // Display an alert when the button is clicked
-      alert("Nice!");
+
+    alert("Nice!");
   });
-  // Function to display the alert message
+
+
   function showAlert() {
     const messageInput = document.getElementById("messageInput");
-    const message = messageInput.value.trim(); // Get the value and trim whitespace
+    const message = messageInput.value.trim();
 
     if (message) {
-        alert(message);
+      alert(message);
     } else {
-        alert("Please enter a message.");
+      alert("Please enter a message.");
     }
   }
 
   const showButton = document.getElementById("showButton");
   showButton.addEventListener("click", showAlert);
 
-const colorChangeDiv = document.getElementById("colorChangeDiv");
+  const colorChangeDiv = document.getElementById("colorChangeDiv");
+  const originalColorDiv = colorChangeDiv.style.backgroundColor;
 
-const originalColor = colorChangeDiv.style.backgroundColor;
-
-colorChangeDiv.addEventListener("mouseenter", () => {
+  colorChangeDiv.addEventListener("mouseenter", () => {
     colorChangeDiv.style.backgroundColor = "lightcoral";
+  });
+
+  colorChangeDiv.addEventListener("mouseleave", () => {
+    colorChangeDiv.style.backgroundColor = originalColorDiv;
+  });
+
+  const colorChangeParagraph = document.getElementById("colorChangeParagraph");
+  const originalColorParagraph = colorChangeParagraph.style.backgroundColor;
+
+  colorChangeParagraph.addEventListener("mouseenter", () => {
+    colorChangeParagraph.style.backgroundColor = "blue";
+  });
+
+  colorChangeParagraph.addEventListener("mouseleave", () => {
+    colorChangeParagraph.style.backgroundColor = originalColorParagraph;
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const addSpanButton = document.getElementById("addSpanButton");
+  const emptyDiv = document.getElementById("emptyDiv");
+
+  addSpanButton.addEventListener("click", function () {
+
+    const span = document.createElement("span");
+    span.textContent = "James Sanders";
+
+
+    emptyDiv.appendChild(span);
+  });
 });
 
-colorChangeDiv.addEventListener("mouseleave", () => {
-    colorChangeDiv.style.backgroundColor = originalColor;
-});
+document.addEventListener("DOMContentLoaded", function () {
+  const addFriendsButton = document.getElementById("addFriendsButton");
+  const friendsList = document.getElementById("friendsList");
 
+  addFriendsButton.addEventListener("click", function () {
+    const friendNames = [
+      "De'Meco",
+      "Jackie",
+      "DeAmber",
+      "Jasmine",
+      "Mike",
+      "Tanisha",
+      "Doris",
+      "Ken",
+      "Kem",
+      "Larry"
+    ];
 
+    
+    friendNames.forEach(function (friendName) {
+      const li = document.createElement("li");
+      li.textContent = friendName;
+      friendsList.appendChild(li);
+    });
+  });
 });
